@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Library</title>
+</head>
+<body>
+  <nav>
+    <a href="/games/new">Create a Game request</a>
+  </nav>
+  <h2>Game Library</h2>
+  <ul>
+    <% for (let i = 0; i < games.length; i++) {  %>
+      <li>
+        The 
+        <a href="/games/<%= games[i].id %>"><%= games[i].name %></a>
+        is <%= games[i].developer %>
+        <% if (games[i].iPlayed === true) { %>
+          I have played this game.
+        <% } else { %>
+          I have not played this game.
+        <% } %>
+        <a href="/games/<%games[i].id; %>/edit">Edit</a>
+
+        <form action="/games/<%= games[i].id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+        </form>
+      </li>
+    <% } %>
+  </ul>
+</body>
+</html>

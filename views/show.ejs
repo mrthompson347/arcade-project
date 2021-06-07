@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Here is your game</title>
+</head>
+<body>
+  <nav>
+    <a href="/games">Back to Game Library</a>
+  </nav>
+  <h2>Here is your Game</h2>
+    The <%= games.name %> was devoloped by <%= games.developer %>
+  <% if (games.iPlayed === true) { %>
+    I have played.
+  <% } else { %>
+    I have not played.
+  <% } %>
+
+</body>
+</html>
